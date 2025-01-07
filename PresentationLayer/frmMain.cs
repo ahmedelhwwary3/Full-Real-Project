@@ -1,4 +1,5 @@
 ﻿using PresentationLayer.Applications.ApplicationTypes;
+using PresentationLayer.Applications.InternationalLicenseApplication;
 using PresentationLayer.Applications.LocalDrivingLicenseApplications;
 using PresentationLayer.Applications.ReleaseDetainedLicense;
 using PresentationLayer.Applications.RenewLocalLicense;
@@ -9,6 +10,7 @@ using PresentationLayer.Licenses.DetainLicense;
 using PresentationLayer.Licenses.InternationalLicenses;
 using PresentationLayer.Login;
 using PresentationLayer.People;
+using PresentationLayer.Tests.TestTypes;
 using PresentationLayer.Users;
 using System;
 using System.Collections.Generic;
@@ -70,7 +72,7 @@ namespace PresentationLayer
 
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListApplicationTypes frm = new frmListApplicationTypes();
+            frmListTestTypes frm=new frmListTestTypes();
             frm.ShowDialog();
         }
 
@@ -131,6 +133,13 @@ namespace PresentationLayer
         private void internationalDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListInternationalLicenses frm=new frmListInternationalLicenses();
+            frm.ShowDialog();
+        }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueInternationalLicense frm = new frmIssueInternationalLicense();
+     
             frm.ShowDialog();
         }
     }

@@ -167,6 +167,8 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
             {
                 MessageBox.Show("Local Driving License Application was Saved Successfully", "saved",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = false;
+                lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
                 Mode = enMode.Update;
                 this.Text = "Edit Local Driving License Application";
                 lblAddEditLocalDrivingLicenseApplication.Text = "Edit Local Driving License Application";

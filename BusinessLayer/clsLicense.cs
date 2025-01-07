@@ -74,12 +74,12 @@ namespace BusinessLayer
         }
         private bool _AddNewLicense()
         {
-            this.LicenseID = clsLicenseData.AddNewLicense(this.ApplicationID, this.DriverID, this.LicenseClass, this.IssueDate, this.ExpirationDate, this.Notes, this.PaidFees, this.IsActive, (int)this.IssueReason, this.CreatedByUserID);
+            this.LicenseID = clsLicenseData.AddNew(this.ApplicationID, this.DriverID, this.LicenseClass, this.IssueDate, this.ExpirationDate, this.Notes, this.PaidFees, this.IsActive, (int)this.IssueReason, this.CreatedByUserID);
             return (this.LicenseID != -1);
         }
         private bool _UpdateLicense()
         {
-            return clsLicenseData.UpdateLicense(this.LicenseID, this.ApplicationID, this.DriverID, this.LicenseClass, this.IssueDate, this.ExpirationDate, this.Notes, this.PaidFees, this.IsActive, (int)this.IssueReason, this.CreatedByUserID);
+            return clsLicenseData.Update(this.LicenseID, this.ApplicationID, this.DriverID, this.LicenseClass, this.IssueDate, this.ExpirationDate, this.Notes, this.PaidFees, this.IsActive, (int)this.IssueReason, this.CreatedByUserID);
         }
 
 
@@ -164,7 +164,7 @@ namespace BusinessLayer
         }
         public static bool DeleteLicense(int LicenseID)
         {
-            return clsLicenseData.DeleteLicense(LicenseID);
+            return clsLicenseData.Delete(LicenseID);
         }
         public static bool IsThereActiveLicenseForPersonPerLicenseClass(int PersonID, int LicenseClassID)
         {

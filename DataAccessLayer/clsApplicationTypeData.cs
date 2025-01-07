@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 
 namespace DataAccessLayer
@@ -15,31 +12,23 @@ namespace DataAccessLayer
         {
             bool IsFound = false;
             string query = "Select IsFound=1 From ApplicationTypes where ApplicationTypeID=@ApplicationTypeID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            try
-            {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                IsFound = reader.HasRows;
-                reader.Close();
 
-            }
-            catch(Exception ex) 
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        IsFound = reader.HasRows;
+                    }
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    LogError(ex);
+                }
             }
             return IsFound;
         }
@@ -48,147 +37,124 @@ namespace DataAccessLayer
         {
             bool IsFound = false;
             string query = "Select * From ApplicationTypes where ApplicationTypeID=@ApplicationTypeID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            try
-            {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    IsFound = true;
 
-                    ApplicationTypeTitle = (string)reader["ApplicationTypeTitle"];
-                    ApplicationFees = (decimal)reader["ApplicationFees"];
-                }
-                reader.Close();
-
-            }
-            catch (Exception ex)
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            IsFound = true;
+                            ApplicationTypeTitle = (string)reader["ApplicationTypeTitle"];
+                            ApplicationFees = (decimal)reader["ApplicationFees"];
+                        }
+                    }
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    LogError(ex);
+                }
             }
             return IsFound;
         }
+
         public static DataTable GetAllApplicationTypesList()
         {
             DataTable dtUsers = new DataTable();
-            string query = "Select * From ApplicationTypes ;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            try
+            string query = "Select * From ApplicationTypes;";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
+                try
                 {
-                    dtUsers.Load(reader);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            dtUsers.Load(reader);
+                        }
+                    }
                 }
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                 
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                catch (Exception ex)
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    LogError(ex);
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
             }
             return dtUsers;
         }
+
         public static int AddNewApplicationType(string ApplicationTypeTitle, decimal ApplicationTypeFees)
         {
             int NewID = -1;
-            string query = @"Insert Into ApplicationTypes (  ApplicationTypeTitle, ApplicationTypeFees) 
-                                         values ( @ApplicationTypeTitle, @ApplicationTypeFees);
-                                         select Scope_Identity();";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationTypeTitle", ApplicationTypeTitle);
-            command.Parameters.AddWithValue("@ApplicationTypeFees", ApplicationTypeFees);
+            string query = @"Insert Into ApplicationTypes (ApplicationTypeTitle, ApplicationTypeFees) 
+                             values (@ApplicationTypeTitle, @ApplicationTypeFees);
+                             select Scope_Identity();";
 
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@ApplicationTypeTitle", ApplicationTypeTitle);
+                command.Parameters.AddWithValue("@ApplicationTypeFees", ApplicationTypeFees);
 
-            try
-            {
-                connection.Open();
-                object result = command.ExecuteScalar();
-                if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                try
                 {
-                    NewID = InsertedID;
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                    {
+                        NewID = InsertedID;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                catch (Exception ex)
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    LogError(ex);
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
             }
             return NewID;
         }
-        public static bool UpdateApplicationType(int ApplicationTypeID, string ApplicationTypeTitle,decimal ApplicationFees)
+
+        public static bool UpdateApplicationType(int ApplicationTypeID, string ApplicationTypeTitle, decimal ApplicationFees)
         {
             int AffectedRows = 0;
             string query = @"Update ApplicationTypes set ApplicationTypeTitle=@ApplicationTypeTitle,
-                                                         ApplicationFees=@ApplicationFees
-                                         where ApplicationTypeID=@ApplicationTypeID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            command.Parameters.AddWithValue("@ApplicationTypeTitle", ApplicationTypeTitle);
-            command.Parameters.AddWithValue("@ApplicationFees", ApplicationFees);
-            try
+                                                     ApplicationFees=@ApplicationFees
+                             where ApplicationTypeID=@ApplicationTypeID;";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                AffectedRows = command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                 
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+                command.Parameters.AddWithValue("@ApplicationTypeTitle", ApplicationTypeTitle);
+                command.Parameters.AddWithValue("@ApplicationFees", ApplicationFees);
+
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    AffectedRows = command.ExecuteNonQuery();
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    LogError(ex);
+                }
             }
             return (AffectedRows > 0);
         }
 
-
-
-
+        private static void LogError(Exception ex)
+        {
+            string sourceName = "DVLD1";
+            if (!EventLog.SourceExists(sourceName))
+            {
+                EventLog.CreateEventSource(sourceName, "Application");
+            }
+            EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
+        }
     }
 }

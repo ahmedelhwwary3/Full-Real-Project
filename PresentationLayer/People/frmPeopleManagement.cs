@@ -135,6 +135,7 @@ namespace PresentationLayer.People
          
         private void frmPeopleManagement_Load(object sender, EventArgs e)
         {
+            
             cbFilterBy.Text = "None";
             _dtPeople = clsPerson.GetAllPeopleList();
             dgvPeopleList.DataSource = _dtPeople;
@@ -168,10 +169,10 @@ namespace PresentationLayer.People
                 dgvPeopleList.Columns[8].Width = 140;
                 dgvPeopleList.Columns[8].HeaderText = "Country Name";
 
-                dgvPeopleList.Columns[9].Width = 120;
+                dgvPeopleList.Columns[9].Width = 150;
                 dgvPeopleList.Columns[9].HeaderText = "Phone";
 
-                dgvPeopleList.Columns[10].Width = 150;
+                dgvPeopleList.Columns[10].Width = 200;
                 dgvPeopleList.Columns[10].HeaderText = "Email";
 
 

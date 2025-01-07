@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlInternationalLicenseInfo2 = new PresentationLayer.Licenses.InternationalLicenses.ctrlInternationalLicenseInfo();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ctrlInternationalLicenseInfo2 = new PresentationLayer.Licenses.InternationalLicenses.ctrlInternationalLicenseInfo();
             this.SuspendLayout();
-            // 
-            // ctrlInternationalLicenseInfo2
-            // 
-            this.ctrlInternationalLicenseInfo2.Location = new System.Drawing.Point(12, 77);
-            this.ctrlInternationalLicenseInfo2.Name = "ctrlInternationalLicenseInfo2";
-            this.ctrlInternationalLicenseInfo2.Size = new System.Drawing.Size(863, 267);
-            this.ctrlInternationalLicenseInfo2.TabIndex = 0;
             // 
             // label1
             // 
@@ -61,6 +54,14 @@
             this.button1.Text = "Close";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ctrlInternationalLicenseInfo2
+            // 
+            this.ctrlInternationalLicenseInfo2.Location = new System.Drawing.Point(12, 77);
+            this.ctrlInternationalLicenseInfo2.Name = "ctrlInternationalLicenseInfo2";
+            this.ctrlInternationalLicenseInfo2.Size = new System.Drawing.Size(863, 267);
+            this.ctrlInternationalLicenseInfo2.TabIndex = 0;
             // 
             // frmShowInternationaLicenseInfo
             // 
@@ -71,6 +72,7 @@
             this.Controls.Add(this.ctrlInternationalLicenseInfo2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmShowInternationaLicenseInfo";
+            this.Load += new System.EventHandler(this.frmShowInternationaLicenseInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

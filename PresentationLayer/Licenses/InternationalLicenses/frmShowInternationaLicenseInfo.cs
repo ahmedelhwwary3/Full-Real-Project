@@ -25,10 +25,15 @@ namespace PresentationLayer.Licenses.InternationalLicenses
         {
             this.Close();
         }
-
-        private void frmShowInternationalLicenseInfo_Load(object sender, EventArgs e)
+         
+        private void frmShowInternationaLicenseInfo_Load(object sender, EventArgs e)
         {
             ctrlInternationalLicenseInfo2.LoadInfo(_InternationalLicenseID);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

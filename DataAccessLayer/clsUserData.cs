@@ -6,102 +6,95 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
+
 namespace DataAccessLayer
 {
     public class clsUserData
     {
-
-
         public static DataTable GetAllUsersList()
         {
             DataTable dtUsers = new DataTable();
             string query = @"select * from Users_View order by FullName asc";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
+                try
                 {
-                    dtUsers.Load(reader);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            dtUsers.Load(reader);
+                        }
+                    }
                 }
-                reader.Close();
-            }
-            catch
-            {
-                 
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    // Log exception if needed
+                }
             }
             return dtUsers;
-
         }
+
         public static bool IsExist(int UserID)
         {
-
             bool IsFound = false;
             string query = "Select IsFound=1 From Users where UserID=@UserID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserID", UserID);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                IsFound = reader.HasRows;
-                reader.Close();
-
-            }
-            catch (Exception ex)
-            {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@UserID", UserID);
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        IsFound = reader.HasRows;
+                    }
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    IsFound = false;
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
+                }
             }
             return IsFound;
         }
+
         public static bool IsExist(string UserName)
         {
-
             bool IsFound = false;
             string query = "Select IsFound=1 From Users where UserName=@UserName;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserName", UserName);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                IsFound = reader.HasRows;
-                reader.Close();
-
-            }
-            catch (Exception ex)
-            {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@UserName", UserName);
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        IsFound = reader.HasRows;
+                    }
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    IsFound = false;
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
+                }
             }
             return IsFound;
         }
@@ -110,78 +103,74 @@ namespace DataAccessLayer
         {
             bool IsFound = false;
             string query = "Select * From Users where UserID=@UserID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserID", UserID);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                command.Parameters.AddWithValue("@UserID", UserID);
+                try
                 {
-                    IsFound = true;
-                    PersonID = (int)reader["PersonID"];
-                    UserName = (string)reader["UserName"];
-                    Password = (string)reader["Password"];
-                    IsActive = (bool)reader["IsActive"];
-
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            IsFound = true;
+                            PersonID = (int)reader["PersonID"];
+                            UserName = (string)reader["UserName"];
+                            Password = (string)reader["Password"];
+                            IsActive = (bool)reader["IsActive"];
+                        }
+                    }
                 }
-                reader.Close();
-
-            }
-            catch (Exception ex)
-            {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                catch (Exception ex)
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    IsFound = false;
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
             }
             return IsFound;
         }
+
         public static bool FindByUserNameAndPassword(ref int UserID, ref int PersonID, string UserName, string Password, ref bool IsActive)
         {
             bool IsFound = false;
             string query = "Select * From Users where UserName=@UserName And Password=@Password;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                command.Parameters.AddWithValue("@UserName", UserName);
+                command.Parameters.AddWithValue("@Password", Password);
+                try
                 {
-                    IsFound = true;
-                    PersonID = (int)reader["PersonID"];
-                    IsActive = (bool)reader["IsActive"];
-                    UserID = (int)reader["UserID"];
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            IsFound = true;
+                            PersonID = (int)reader["PersonID"];
+                            IsActive = (bool)reader["IsActive"];
+                            UserID = (int)reader["UserID"];
+                        }
+                    }
                 }
-                reader.Close();
-
-            }
-            catch (Exception ex)
-            {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                catch (Exception ex)
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    IsFound = false;
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
             }
             return IsFound;
         }
@@ -192,38 +181,36 @@ namespace DataAccessLayer
             string query = @"Insert Into Users (PersonID,UserName,Password,IsActive) 
                                          values (@PersonID,@UserName,@Password,@IsActive);
                                          select Scope_Identity();";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
-            command.Parameters.AddWithValue("@IsActive", IsActive);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                object result = command.ExecuteScalar();
-                if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                command.Parameters.AddWithValue("@PersonID", PersonID);
+                command.Parameters.AddWithValue("@UserName", UserName);
+                command.Parameters.AddWithValue("@Password", Password);
+                command.Parameters.AddWithValue("@IsActive", IsActive);
+                try
                 {
-                    NewID = InsertedID;
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int InsertedID))
+                    {
+                        NewID = InsertedID;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-         
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                catch (Exception ex)
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
             }
             return NewID;
         }
+
         public static bool UpdateUser(int UserID, int PersonID, string UserName, string Password, bool IsActive)
         {
             int AffectedRows = 0;
@@ -232,63 +219,56 @@ namespace DataAccessLayer
                                               ,Password=@Password
                                              , IsActive=@IsActive
                                          where UserID=@UserID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserID", UserID);
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
-            command.Parameters.AddWithValue("@IsActive", IsActive);
-
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                AffectedRows = command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-         
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@UserID", UserID);
+                command.Parameters.AddWithValue("@PersonID", PersonID);
+                command.Parameters.AddWithValue("@UserName", UserName);
+                command.Parameters.AddWithValue("@Password", Password);
+                command.Parameters.AddWithValue("@IsActive", IsActive);
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    AffectedRows = command.ExecuteNonQuery();
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
+                }
             }
             return (AffectedRows > 0);
         }
+
         public static bool DeleteUser(int UserID)
         {
             int AffectedRows = 0;
             string query = "Delete From Users Where UserID=@UserID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserID", UserID);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                AffectedRows = command.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-         
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                command.Parameters.AddWithValue("@UserID", UserID);
+                try
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    connection.Open();
+                    AffectedRows = command.ExecuteNonQuery();
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
+                catch (Exception ex)
+                {
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
+                }
             }
             return (AffectedRows > 0);
         }
@@ -297,44 +277,38 @@ namespace DataAccessLayer
         {
             bool IsFound = false;
             string query = @"Select * From Users where PersonID=@PersonID;";
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                command.Parameters.AddWithValue("@PersonID", PersonID);
+                try
                 {
-                    IsFound = true;
-                    UserID = (int)reader["UserID"];
-                    UserName = (string)reader["UserName"];
-                    Password = (string)reader["Password"];
-                    IsActive = (bool)reader["IsActive"];
-
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            IsFound = true;
+                            UserID = (int)reader["UserID"];
+                            UserName = (string)reader["UserName"];
+                            Password = (string)reader["Password"];
+                            IsActive = (bool)reader["IsActive"];
+                        }
+                    }
                 }
-                reader.Close();
-
-            }
-            catch (Exception ex)
-            {
-                IsFound = false;
-                string sourceName = "DVLD1";
-                // Create the event source if it does not exist
-                if (!EventLog.SourceExists(sourceName))
+                catch (Exception ex)
                 {
-                    EventLog.CreateEventSource(sourceName, "Application");
+                    IsFound = false;
+                    string sourceName = "DVLD1";
+                    // Create the event source if it does not exist
+                    if (!EventLog.SourceExists(sourceName))
+                    {
+                        EventLog.CreateEventSource(sourceName, "Application");
+                    }
+                    EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
                 }
-                EventLog.WriteEntry(sourceName, $"{ex}", EventLogEntryType.Error);
-            }
-            finally
-            {
-                connection.Close();
             }
             return IsFound;
         }
-
-
-
     }
 }

@@ -52,6 +52,7 @@ namespace PresentationLayer.Tests
         private void frmListTestAppointments_Load(object sender, EventArgs e)
         {
             _LoadTestTypeImage();
+            ctrlDrivingLicenesApplicationInfo1.LoadLocalDrivingLicenseApplicationInfo(_LocalDrivingLicenseApplicationID);
             _dtTestAppointmentsList=clsTestAppointment.GetAllTestAppointmentsListPerTestType(_LocalDrivingLicenseApplicationID,_TestTypeID);
             dgvTestAppointments.DataSource= _dtTestAppointmentsList;
             lblRecords.Text=dgvTestAppointments.Rows.Count.ToString();

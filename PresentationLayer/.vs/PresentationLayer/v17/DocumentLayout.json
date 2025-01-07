@@ -1,12 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\",
-  "Documents": [],
+  "WorkspaceRootPath": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\my projects\\my_solution dvld\\presentationlayer\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\my projects\\my_solution dvld\\presentationlayer\\tests\\testtypes\\frmlisttesttypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:tests\\testtypes\\frmlisttesttypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\my projects\\my_solution dvld\\presentationlayer\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 586,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmListTestTypes.cs [Design]",
+              "DocumentMoniker": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\Tests\\TestTypes\\frmListTestTypes.cs",
+              "RelativeDocumentMoniker": "Tests\\TestTypes\\frmListTestTypes.cs",
+              "ToolTip": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\Tests\\TestTypes\\frmListTestTypes.cs [Design]",
+              "RelativeToolTip": "Tests\\TestTypes\\frmListTestTypes.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T00:13:30.736Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAawEoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T00:12:40.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T00:12:33.895Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

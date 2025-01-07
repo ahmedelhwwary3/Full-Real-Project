@@ -181,16 +181,19 @@ namespace PresentationLayer.People
         }
         private void _LoadData()
         {
+
             lblTitle.Text = "Update Person";
             this.Text = "Update Person";
             _Person = clsPerson.Find(_PersonID);
             if (_Person != null)
             {
+                llRemove.Visible =(_Person.ImagePath!="");
                 dtpBirth.Value = _Person.DateOfBirth;
                 if (_Person.Gendor == 1)
-                    rbMale.Checked = true;
+                    rbMale.PerformClick();
+
                 else
-                    rbFemale.Checked = true;
+                    rbFemale.PerformClick();
                 txtFirst.Text = _Person.FirstName;
                 txtSecond.Text = _Person.SecondName;
                 txtThird.Text = _Person.ThirdName;

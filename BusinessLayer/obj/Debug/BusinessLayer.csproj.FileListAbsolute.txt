@@ -25,3 +25,12 @@ F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\BusinessLayer
 F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
 F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\BusinessLayer\obj\Debug\BusinessLayer.dll
 F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\BusinessLayer\obj\Debug\BusinessLayer.pdb
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\bin\Debug\BusinessLayer.dll
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\bin\Debug\BusinessLayer.pdb
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\bin\Debug\DataAccessLayer.dll
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\obj\Debug\BusinessLayer.dll
+F:\Programming\My Projects\My_Solution DVLD\BusinessLayer\obj\Debug\BusinessLayer.pdb

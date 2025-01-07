@@ -106,6 +106,7 @@ namespace PresentationLayer.Applications.ReleaseDetainedLicense
                 return;
             }
             _DetainedLicense = clsDetainedLicense.FindByLicenseID(_DetainID);
+            
             if(!_DetainedLicense.IsDetained())
             {
                 ctrlDriverLicenseInfoWithFilter1.Clear();

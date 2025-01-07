@@ -1,50 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\",
+  "WorkspaceRootPath": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\c#\\course19 (full project)\\full project\\my_solution\\presentationlayer\\global\\clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:global\\clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\my projects\\my_solution dvld\\presentationlayer\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:login\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\my projects\\my_solution dvld\\presentationlayer\\tests\\testtypes\\frmlisttesttypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:tests\\testtypes\\frmlisttesttypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\tests\\controls\\ctrlscheduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:tests\\controls\\ctrlscheduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\tests\\controls\\ctrlscheduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:tests\\controls\\ctrlscheduletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\global\\clsformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:global\\clsformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\people\\frmaddeditperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:people\\frmaddeditperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\people\\frmaddeditperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:people\\frmaddeditperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:people\\controls\\ctrlpersoncardwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:people\\frmfindperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\global\\clsvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:global\\clsvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|f:\\programming\\my projects\\my_solution dvld\\presentationlayer\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CD3EB070-F1D7-4CAE-A3D6-3FCABE499223}|PresentationLayer.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,136 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "clsGlobal.cs",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Global\\clsGlobal.cs",
-              "RelativeDocumentMoniker": "Global\\clsGlobal.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Global\\clsGlobal.cs",
-              "RelativeToolTip": "Global\\clsGlobal.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAUwC0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T19:10:56.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Login\\frmLogin.cs",
-              "RelativeDocumentMoniker": "Login\\frmLogin.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Login\\frmLogin.cs [Design]",
-              "RelativeToolTip": "Login\\frmLogin.cs [Design]",
+              "Title": "frmListTestTypes.cs [Design]",
+              "DocumentMoniker": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\Tests\\TestTypes\\frmListTestTypes.cs",
+              "RelativeDocumentMoniker": "Tests\\TestTypes\\frmListTestTypes.cs",
+              "ToolTip": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\Tests\\TestTypes\\frmListTestTypes.cs [Design]",
+              "RelativeToolTip": "Tests\\TestTypes\\frmListTestTypes.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T19:10:47.709Z",
+              "WhenOpened": "2025-01-07T00:13:30.736Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs*",
+              "RelativeToolTip": "frmMain.cs*",
+              "ViewState": "AgIAADsAAAAAAAAAAAAawEoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T00:12:40.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ctrlScheduleTest.cs",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Tests\\Controls\\ctrlScheduleTest.cs",
-              "RelativeDocumentMoniker": "Tests\\Controls\\ctrlScheduleTest.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Tests\\Controls\\ctrlScheduleTest.cs",
-              "RelativeToolTip": "Tests\\Controls\\ctrlScheduleTest.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "F:\\Programming\\My Projects\\My_Solution DVLD\\PresentationLayer\\frmMain.cs [Design]*",
+              "RelativeToolTip": "frmMain.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T15:59:24.745Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ctrlScheduleTest.cs [Design]",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Tests\\Controls\\ctrlScheduleTest.cs",
-              "RelativeDocumentMoniker": "Tests\\Controls\\ctrlScheduleTest.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Tests\\Controls\\ctrlScheduleTest.cs [Design]",
-              "RelativeToolTip": "Tests\\Controls\\ctrlScheduleTest.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T15:59:22.81Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "clsFormat.cs",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Global\\clsFormat.cs",
-              "RelativeDocumentMoniker": "Global\\clsFormat.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Global\\clsFormat.cs",
-              "RelativeToolTip": "Global\\clsFormat.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T13:12:42.526Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ctrlPersonCardWithFilter.cs",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T09:06:41.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ctrlPersonCardWithFilter.cs [Design]",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "RelativeDocumentMoniker": "People\\Controls\\ctrlPersonCardWithFilter.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\Controls\\ctrlPersonCardWithFilter.cs [Design]",
-              "RelativeToolTip": "People\\Controls\\ctrlPersonCardWithFilter.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T09:06:39.61Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmFindPerson.cs [Design]",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\frmFindPerson.cs",
-              "RelativeDocumentMoniker": "People\\frmFindPerson.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\frmFindPerson.cs [Design]",
-              "RelativeToolTip": "People\\frmFindPerson.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T09:06:29.903Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "clsValidation.cs",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Global\\clsValidation.cs",
-              "RelativeDocumentMoniker": "Global\\clsValidation.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\Global\\clsValidation.cs",
-              "RelativeToolTip": "Global\\clsValidation.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T11:49:48.916Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmAddEditPerson.cs",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\frmAddEditPerson.cs",
-              "RelativeDocumentMoniker": "People\\frmAddEditPerson.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\frmAddEditPerson.cs",
-              "RelativeToolTip": "People\\frmAddEditPerson.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAkwEcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T23:28:46.546Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmAddEditPerson.cs [Design]",
-              "DocumentMoniker": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\frmAddEditPerson.cs",
-              "RelativeDocumentMoniker": "People\\frmAddEditPerson.cs",
-              "ToolTip": "F:\\Programming\\C#\\Course19 (Full Project)\\Full Project\\My_Solution\\PresentationLayer\\People\\frmAddEditPerson.cs [Design]",
-              "RelativeToolTip": "People\\frmAddEditPerson.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T23:28:44.924Z"
+              "WhenOpened": "2025-01-07T00:12:33.895Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

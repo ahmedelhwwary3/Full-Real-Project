@@ -16,3 +16,9 @@ F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\DataAccessLay
 F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 F:\Programming\C#\Course19 (Full Project)\Full Project\My_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+F:\Programming\My Projects\My_Solution DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+F:\Programming\My Projects\My_Solution DVLD\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Programming\My Projects\My_Solution DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+F:\Programming\My Projects\My_Solution DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+F:\Programming\My Projects\My_Solution DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+F:\Programming\My Projects\My_Solution DVLD\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

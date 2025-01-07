@@ -189,16 +189,22 @@ namespace PresentationLayer.Applications.LocalDrivingLicenseApplications
 
             if (LocalApp!=null)
             {
-                if(LocalApp.Cancel())
+                if(MessageBox.Show("Are you sure you want to cancel this application ?","Confirm",
+                    MessageBoxButtons.OKCancel,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)==DialogResult.OK)
                 {
-                    MessageBox.Show("Local Driving License Application was cancelled successfully","cancelled",
-                        MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    if (LocalApp.Cancel())
+                    {
+                        MessageBox.Show("Local Driving License Application was cancelled successfully", "cancelled",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmListLocalDrivingLicenseApplications_Load(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Local Driving License Application cancel Failed", "Failed",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Local Driving License Application cancel Failed", "Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
         }
 

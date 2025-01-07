@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Configuration;  // إضافة مكتبة لاستخدام إعدادات الاتصال
 
 namespace DataAccessLayer
 {
     public class clsTestTypeData
     {
-        
+
         public static DataTable GetAllTestTypesList()
         {
             DataTable dtTestTypes = new DataTable();
@@ -30,7 +31,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                
+
                 string sourceName = "DVLD1";
                 // Create the event source if it does not exist
                 if (!EventLog.SourceExists(sourceName))
@@ -46,6 +47,7 @@ namespace DataAccessLayer
             return dtTestTypes;
 
         }
+
         public static bool IsExist(decimal TestTypeID)
         {
 
@@ -79,6 +81,7 @@ namespace DataAccessLayer
             }
             return IsFound;
         }
+
         public static bool IsExist(string TestTypeName)
         {
 
@@ -157,8 +160,8 @@ namespace DataAccessLayer
         public static decimal AddNewTestType(string TestTypeTitle, string TestTypeDescription, decimal TestTypeFees)
         {
             decimal NewID = -1;
-            string query = @"Insert decimalo TestTypes (TestTypeTitl,TestTypeDescription,TestTypeFees) 
-                                         values (@TestTypeTitl,@TestTypeDescription,@TestTypeFees);
+            string query = @"Insert into TestTypes (TestTypeTitle,TestTypeDescription,TestTypeFees) 
+                                         values (@TestTypeTitle,@TestTypeDescription,@TestTypeFees);
                                          select Scope_Identity();";
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             SqlCommand command = new SqlCommand(query, connection);
@@ -177,7 +180,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                
+
                 string sourceName = "DVLD1";
                 // Create the event source if it does not exist
                 if (!EventLog.SourceExists(sourceName))
@@ -192,6 +195,7 @@ namespace DataAccessLayer
             }
             return NewID;
         }
+
         public static bool UpdateTestType(decimal TestTypeID, string TestTypeTitle, string TestTypeDescription, decimal TestTypeFees)
         {
             decimal AffectedRows = 0;
@@ -212,7 +216,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-     
+
                 string sourceName = "DVLD1";
                 // Create the event source if it does not exist
                 if (!EventLog.SourceExists(sourceName))
@@ -227,7 +231,5 @@ namespace DataAccessLayer
             }
             return (AffectedRows > 0);
         }
-
-
     }
 }
